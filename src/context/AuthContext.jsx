@@ -13,17 +13,14 @@ export const AuthContextProvider = ({ children }) => {
       console.log(user);
     });
 
-    //clean up function
-    return () =>{
+    return () => {
       unsub();
     };
   }, []);
-
 //any component routed will routed for currentUser. can route entire application using this provider -- this is so whoever is the user will show for whatever component is routed. 
-    return (
-      
+return (
     <AuthContext.Provider value={{ currentUser }}>
       {children}
     </AuthContext.Provider>
-    );
-    };
+  );
+};
